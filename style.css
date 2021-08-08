@@ -1,0 +1,49 @@
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+
+    body,html{
+        height: 100%;
+        width: 100%;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        background: #8e9eab;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    label.labelcheckbox{
+        width: 100px;
+        height: 50px;
+        display: inline-block;
+        background-color: #eef2f3;
+        border-radius: 50px;
+        cursor: pointer;
+        position: relative;
+    }
+    label.labelcheckbox::after{
+        content:'';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left:5px;
+        top:5px;
+        border-radius: 50%;
+        background-color: #185a9d;
+        transition: .3s;
+    }
+    #checkbox{
+        display: none;
+    }
+    #checkbox:checked + label{
+        background-color: #43cea2;
+    }
+    #checkbox:checked +label.labelcheckbox::after{
+        transform: translateX(50px);
+    }
